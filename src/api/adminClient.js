@@ -43,7 +43,24 @@ async function adminFetch(path, { page, size } = {}) {
     err.cause = e;
     throw err;
   }
-  const json = await res.json();
+  let json;
+  try {
+    json = await res.json();
+  } catch {
+    const err = new Error(`API admin lỗi ${res.status}`);
+    err.code = res.status === 401 ? 'UNAUTHORIZED' : 'INVALID_RESPONSE';
+    err.status = res.status;
+    throw err;
+  }
+  if (res.status === 401 || json.errorCode === 'UNAUTHORIZED') {
+    const err = new Error(
+      json.message ||
+        'Mã admin sai. Nhập đúng ADMIN_SECRET trên Render (không phải vietlocal-admin-dev).',
+    );
+    err.code = 'UNAUTHORIZED';
+    err.status = 401;
+    throw err;
+  }
   if (!json.success) {
     const err = new Error(json.message || 'Request failed');
     err.code = json.errorCode;

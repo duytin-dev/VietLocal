@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { isProductionApi } from '../api/config';
 import { Link } from 'react-router-dom';
 import { adminApi, clearAdminSecret, getAdminSecret, setAdminSecret } from '../api/adminClient';
 import { formatVnd } from '../utils/format';
@@ -91,6 +92,7 @@ export default function AdminPage() {
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const loadingRef = useRef(false);
 
   const loadDashboard = useCallback(async () => {
     const stats = await adminApi.getDashboard();
@@ -111,7 +113,8 @@ export default function AdminPage() {
   }, [tab, page, loadDashboard]);
 
   const load = useCallback(async () => {
-    if (!getAdminSecret()) return;
+    if (!getAdminSecret() || loadingRef.current) return;
+    loadingRef.current = true;
     setLoading(true);
     setError('');
     try {
@@ -121,8 +124,10 @@ export default function AdminPage() {
       if (e.code === 'UNAUTHORIZED') {
         clearAdminSecret();
         setSecret('');
+        setInputSecret('');
       }
     } finally {
+      loadingRef.current = false;
       setLoading(false);
     }
   }, [loadList]);
@@ -178,7 +183,16 @@ export default function AdminPage() {
             </button>
           </form>
           <p className="admin-login-hint">
-            Mặc định dev: <code>vietlocal-admin-dev</code>
+            {isProductionApi() ? (
+              <>
+                Production: copy giá trị <strong>ADMIN_SECRET</strong> từ Render → Web Service →
+                Environment (không dùng <code>vietlocal-admin-dev</code>).
+              </>
+            ) : (
+              <>
+                Dev local: <code>vietlocal-admin-dev</code>
+              </>
+            )}
           </p>
           <Link to="/">← Về trang chủ</Link>
         </section>
