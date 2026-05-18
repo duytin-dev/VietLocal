@@ -15,7 +15,7 @@ export function clearAdminSecret() {
   sessionStorage.removeItem(STORAGE_KEY);
 }
 
-async function adminFetch(path, { page, size } = {}) {
+async function adminFetch(path, { page, size, method = 'GET', body } = {}) {
   const secret = getAdminSecret();
   if (!secret) {
     const err = new Error('Chưa đăng nhập admin');
@@ -30,10 +30,12 @@ async function adminFetch(path, { page, size } = {}) {
   let res;
   try {
     res = await fetch(url, {
+      method,
       headers: {
         'Content-Type': 'application/json',
         'X-Admin-Secret': secret,
       },
+      body: body != null ? JSON.stringify(body) : undefined,
     });
   } catch (e) {
     const err = new Error(
@@ -74,5 +76,8 @@ export const adminApi = {
   getDashboard: () => adminFetch('/api/admin/dashboard'),
   listBookings: (page, size = 20) => adminFetch('/api/admin/bookings', { page, size }),
   listUsers: (page, size = 20) => adminFetch('/api/admin/users', { page, size }),
+  listGuides: (page, size = 20) => adminFetch('/api/admin/guides', { page, size }),
+  createGuide: (body) =>
+    adminFetch('/api/admin/guides', { method: 'POST', body }),
   listAiChats: (page, size = 20) => adminFetch('/api/admin/ai-chats', { page, size }),
 };

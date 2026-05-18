@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { api } from '../api/client';
+import { isProductionApi } from '../api/config';
 import { formatVnd } from '../utils/format';
 import { useI18n } from '../i18n/useI18n';
 import { IconSparkle, IconRobot, IconSend } from '../components/Icons';
@@ -278,7 +279,7 @@ export default function AiPlannerPage() {
 
         {aiProvider === 'stub' && (
           <p className="planner-demo-banner" role="status">
-            {t('planner.demoMode')}
+            {isProductionApi() ? t('planner.demoModeProd') : t('planner.demoMode')}
           </p>
         )}
 

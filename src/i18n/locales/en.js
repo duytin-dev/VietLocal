@@ -177,7 +177,9 @@ export default {
     viewBook: 'View details & book',
     error: 'Cannot reach the API server. Check that the backend is running and VITE_API_BASE_URL is set.',
     demoMode:
-      'Using demo AI (sample replies). Add GEMINI_API_KEY in application-local.properties and restart the backend for real Gemini.',
+      'Using demo AI (sample replies). Set GEMINI_API_KEY on the backend (Render → Environment) or application-local.properties for local dev, then redeploy/restart.',
+    demoModeProd:
+      'Using demo AI. On Render: set GEMINI_API_KEY (Google AI Studio), AI_PROVIDER=gemini, then redeploy. Check server logs if the key is set but replies stay demo (quota / invalid key).',
     dayUnit: 'days',
   },
   process: {

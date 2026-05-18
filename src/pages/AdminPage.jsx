@@ -8,9 +8,28 @@ import './AdminPage.css';
 const TABS = [
   { id: 'dashboard', label: 'Tổng quan', icon: '📊' },
   { id: 'bookings', label: 'Đặt chuyến đi', icon: '🧳' },
+  { id: 'guides', label: 'Hướng dẫn viên', icon: '🧭' },
   { id: 'users', label: 'Người dùng', icon: '👤' },
   { id: 'ai', label: 'Tương tác AI', icon: '🤖' },
 ];
+
+const GUIDE_TIER_VI = {
+  PREMIUM: 'Cao cấp',
+  MID: 'Trung bình',
+  BUDGET: 'Tiết kiệm',
+};
+
+const EMPTY_GUIDE_FORM = {
+  name: '',
+  slug: '',
+  tier: 'MID',
+  pricePerDay: '',
+  rating: '5',
+  languages: 'Tiếng Việt',
+  imageUrl: '',
+  bio: '',
+  styleDescription: '',
+};
 
 const BOOKING_STATUS_VI = {
   PENDING: 'Chờ xử lý',
@@ -92,6 +111,9 @@ export default function AdminPage() {
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [guideForm, setGuideForm] = useState(EMPTY_GUIDE_FORM);
+  const [showGuideForm, setShowGuideForm] = useState(false);
   const loadingRef = useRef(false);
 
   const loadDashboard = useCallback(async () => {
@@ -108,6 +130,7 @@ export default function AdminPage() {
     let result;
     if (tab === 'bookings') result = await adminApi.listBookings(page, 20);
     else if (tab === 'users') result = await adminApi.listUsers(page, 20);
+    else if (tab === 'guides') result = await adminApi.listGuides(page, 20);
     else result = await adminApi.listAiChats(page, 20);
     setData(result);
   }, [tab, page, loadDashboard]);
@@ -156,6 +179,44 @@ export default function AdminPage() {
     setTab(id);
     setPage(0);
     setSelectedBooking(null);
+    setSuccess('');
+    setError('');
+  };
+
+  const handleGuideField = (field, value) => {
+    setGuideForm((f) => ({ ...f, [field]: value }));
+  };
+
+  const handleCreateGuide = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess('');
+    try {
+      const body = {
+        name: guideForm.name.trim(),
+        tier: guideForm.tier,
+        pricePerDay: Number(guideForm.pricePerDay),
+        rating: Number(guideForm.rating),
+        languages: guideForm.languages.trim() || undefined,
+      };
+      if (guideForm.slug.trim()) body.slug = guideForm.slug.trim();
+      if (guideForm.imageUrl.trim()) body.imageUrl = guideForm.imageUrl.trim();
+      if (guideForm.bio.trim()) body.bio = guideForm.bio.trim();
+      if (guideForm.styleDescription.trim()) body.styleDescription = guideForm.styleDescription.trim();
+
+      const created = await adminApi.createGuide(body);
+      setSuccess(`Đã thêm HDV "${created.name}" (slug: ${created.slug})`);
+      setGuideForm(EMPTY_GUIDE_FORM);
+      setShowGuideForm(false);
+      setTab('guides');
+      setPage(0);
+      await loadList();
+    } catch (err) {
+      setError(err.message || 'Không tạo được hướng dẫn viên');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!secret) {
@@ -240,6 +301,7 @@ export default function AdminPage() {
             <p>
               {tab === 'dashboard' && 'Thống kê tổng hợp hệ thống'}
               {tab === 'bookings' && 'Danh sách đơn đặt tour từ khách'}
+              {tab === 'guides' && 'Thêm và quản lý hướng dẫn viên'}
               {tab === 'users' && 'Tài khoản đã đăng ký'}
               {tab === 'ai' && 'Lịch sử chat AI Planner'}
             </p>
@@ -250,6 +312,7 @@ export default function AdminPage() {
         </header>
 
         {error && <p className="admin-error">{error}</p>}
+        {success && <p className="admin-success">{success}</p>}
         {loading && <p className="admin-loading">Đang tải...</p>}
 
         {!loading && tab === 'dashboard' && dashboard && (
@@ -414,6 +477,163 @@ export default function AdminPage() {
               </aside>
             )}
             <Pager page={page} data={data} onPageChange={setPage} />
+          </>
+        )}
+
+        {!loading && tab === 'guides' && (
+          <>
+            <section className="admin-panel admin-panel--actions">
+              <button
+                type="button"
+                className="vl-btn vl-btn--primary vl-btn--sm"
+                onClick={() => setShowGuideForm((v) => !v)}
+              >
+                {showGuideForm ? 'Đóng form' : '+ Thêm hướng dẫn viên'}
+              </button>
+            </section>
+
+            {showGuideForm && (
+              <section className="admin-panel admin-guide-form">
+                <h2>Thêm hướng dẫn viên mới</h2>
+                <form onSubmit={handleCreateGuide} className="admin-guide-form__grid">
+                  <label>
+                    Họ tên *
+                    <input
+                      required
+                      value={guideForm.name}
+                      onChange={(e) => handleGuideField('name', e.target.value)}
+                      placeholder="Nguyễn Văn A"
+                    />
+                  </label>
+                  <label>
+                    Slug (tùy chọn)
+                    <input
+                      value={guideForm.slug}
+                      onChange={(e) => handleGuideField('slug', e.target.value)}
+                      placeholder="nguyen-van-a — để trống tự tạo"
+                    />
+                  </label>
+                  <label>
+                    Hạng *
+                    <select
+                      value={guideForm.tier}
+                      onChange={(e) => handleGuideField('tier', e.target.value)}
+                    >
+                      <option value="PREMIUM">Cao cấp (PREMIUM)</option>
+                      <option value="MID">Trung bình (MID)</option>
+                      <option value="BUDGET">Tiết kiệm (BUDGET)</option>
+                    </select>
+                  </label>
+                  <label>
+                    Giá / ngày (VNĐ) *
+                    <input
+                      type="number"
+                      required
+                      min="1"
+                      step="1000"
+                      value={guideForm.pricePerDay}
+                      onChange={(e) => handleGuideField('pricePerDay', e.target.value)}
+                      placeholder="800000"
+                    />
+                  </label>
+                  <label>
+                    Đánh giá (0–5)
+                    <input
+                      type="number"
+                      min="0"
+                      max="5"
+                      step="0.1"
+                      value={guideForm.rating}
+                      onChange={(e) => handleGuideField('rating', e.target.value)}
+                    />
+                  </label>
+                  <label>
+                    Ngôn ngữ
+                    <input
+                      value={guideForm.languages}
+                      onChange={(e) => handleGuideField('languages', e.target.value)}
+                      placeholder="Tiếng Việt, English"
+                    />
+                  </label>
+                  <label className="admin-guide-form__full">
+                    URL ảnh
+                    <input
+                      value={guideForm.imageUrl}
+                      onChange={(e) => handleGuideField('imageUrl', e.target.value)}
+                      placeholder="https://..."
+                    />
+                  </label>
+                  <label className="admin-guide-form__full">
+                    Giới thiệu
+                    <textarea
+                      rows={2}
+                      value={guideForm.bio}
+                      onChange={(e) => handleGuideField('bio', e.target.value)}
+                    />
+                  </label>
+                  <label className="admin-guide-form__full">
+                    Phong cách
+                    <textarea
+                      rows={2}
+                      value={guideForm.styleDescription}
+                      onChange={(e) => handleGuideField('styleDescription', e.target.value)}
+                    />
+                  </label>
+                  <motion.div className="admin-guide-form__actions admin-guide-form__full">
+                    <button type="submit" className="vl-btn vl-btn--primary" disabled={loading}>
+                      Lưu HDV
+                    </button>
+                  </motion.div>
+                </form>
+              </section>
+            )}
+
+            {data && (
+              <>
+                <section className="admin-table-wrap">
+                  <table className="admin-table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Hạng</th>
+                        <th>Giá/ngày</th>
+                        <th>Đánh giá</th>
+                        <th>Ngôn ngữ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.content.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="admin-empty">
+                            Chưa có hướng dẫn viên
+                          </td>
+                        </tr>
+                      ) : (
+                        data.content.map((g) => (
+                          <tr key={g.id}>
+                            <td>#{g.id}</td>
+                            <td>
+                              <strong>{g.name}</strong>
+                              <small className="admin-table__sub">{g.slug}</small>
+                            </td>
+                            <td>
+                              <span className="admin-badge admin-badge--muted">
+                                {GUIDE_TIER_VI[g.tier] || g.tier}
+                              </span>
+                            </td>
+                            <td className="admin-table__money">{formatVnd(g.pricePerDay)}</td>
+                            <td>{g.rating}</td>
+                            <td>{g.languages || '—'}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </section>
+                <Pager page={page} data={data} onPageChange={setPage} />
+              </>
+            )}
           </>
         )}
 

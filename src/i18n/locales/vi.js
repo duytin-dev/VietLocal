@@ -177,7 +177,9 @@ export default {
     viewBook: 'Xem chi tiết & đặt dịch vụ',
     error: 'Không kết nối được máy chủ API. Kiểm tra backend đang chạy và cấu hình VITE_API_BASE_URL.',
     demoMode:
-      'Đang dùng AI demo (câu trả lời mẫu). Thêm GEMINI_API_KEY trong application-local.properties rồi restart backend để dùng Gemini thật.',
+      'Đang dùng AI demo (câu trả lời mẫu). Cấu hình GEMINI_API_KEY trên backend (Render → Environment) hoặc application-local.properties khi dev local, rồi redeploy/restart.',
+    demoModeProd:
+      'Đang dùng AI demo. Trên Render: thêm GEMINI_API_KEY (Google AI Studio), AI_PROVIDER=gemini, rồi Redeploy backend. Kiểm tra log nếu key đã có mà vẫn demo (quota/ key sai).',
     dayUnit: 'ngày',
   },
   process: {
