@@ -1,0 +1,125 @@
+.vl-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--header-height);
+}
+
+.vl-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.vl-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.vl-logo__icon {
+  color: var(--color-primary);
+  display: flex;
+}
+
+.vl-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.vl-logo__text strong {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.vl-logo__text small {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.vl-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.vl-nav__link {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.vl-nav__link:hover {
+  color: var(--color-primary);
+}
+
+.vl-nav__link--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.vl-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.vl-header__icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.vl-header__icon-btn:hover {
+  background: var(--color-bg-soft);
+  color: var(--color-primary);
+}
+
+.vl-header__user {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+@media (max-width: 1100px) {
+  .vl-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .vl-header__actions .vl-btn--outline {
+    display: none;
+  }
+}

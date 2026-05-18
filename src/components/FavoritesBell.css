@@ -1,0 +1,130 @@
+.vl-favorites {
+  position: relative;
+}
+
+.vl-favorites__btn {
+  position: relative;
+  color: var(--color-text-muted);
+}
+
+.vl-favorites__btn--open,
+.vl-favorites__btn:hover {
+  color: #e11d48;
+}
+
+.vl-favorites__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #e11d48;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.vl-favorites__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(320px, calc(100vw - 24px));
+  max-height: 420px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e8ebe9;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  z-index: 200;
+}
+
+.vl-favorites__head {
+  padding: 16px 18px 10px;
+  border-bottom: 1px solid #eceeed;
+}
+
+.vl-favorites__head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.vl-favorites__head p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.vl-favorites__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.vl-favorites__empty {
+  margin: 0;
+  padding: 20px 18px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.vl-favorites__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vl-favorites__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition);
+}
+
+.vl-favorites__item:hover {
+  background: var(--color-bg-soft);
+}
+
+.vl-favorites__item img {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.vl-favorites__item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.vl-favorites__item small {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.vl-favorites__foot {
+  padding: 10px 18px 14px;
+  border-top: 1px solid #eceeed;
+}
+
+.vl-favorites__all {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.vl-favorites__all:hover {
+  text-decoration: underline;
+}

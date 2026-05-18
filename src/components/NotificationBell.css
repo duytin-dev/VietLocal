@@ -1,0 +1,154 @@
+.vl-notify {
+  position: relative;
+}
+
+.vl-notify__btn {
+  position: relative;
+}
+
+.vl-notify__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.vl-notify__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(360px, calc(100vw - 24px));
+  max-height: 480px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e8ebe9;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  z-index: 200;
+}
+
+.vl-notify__head {
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid #eceeed;
+}
+
+.vl-notify__greeting {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.vl-notify__sub {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.vl-notify__body {
+  padding: 8px 0 12px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.vl-notify__empty {
+  padding: 24px 20px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.vl-notify__trip-block {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f2f1;
+}
+
+.vl-notify__trip-block:last-child {
+  border-bottom: none;
+}
+
+.vl-notify__item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.vl-notify__trip {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.vl-notify__dismiss {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-light);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.vl-notify__dismiss:hover:not(:disabled) {
+  background: #f5f5f5;
+  color: var(--color-text-muted);
+}
+
+.vl-notify__dismiss:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.vl-notify__price {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.vl-notify__status {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vl-notify__status--paid {
+  color: #15803d;
+}
+
+.vl-notify__status--pending {
+  color: #b45309;
+}
+
+.vl-notify__pay-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.vl-notify__pay-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,232 @@
+@import './styles/variables.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.vl-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.vl-main {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.vl-main--planner {
+  padding: 0;
+}
+
+/* Buttons */
+.vl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.vl-btn--primary {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.vl-btn--primary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.vl-btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.vl-btn--outline:hover {
+  background: var(--color-primary-light);
+}
+
+.vl-btn--white {
+  background: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.vl-btn--lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.vl-btn--sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.vl-btn--block {
+  width: 100%;
+}
+
+/* Section headers */
+.vl-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.vl-section-head h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vl-section-head h2 .vl-icon-leaf {
+  color: var(--color-primary);
+}
+
+.vl-section-head p {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.vl-link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.vl-link-more:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.vl-footer {
+  background: var(--color-text);
+  color: #ccc;
+  margin-top: 80px;
+}
+
+.vl-footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 48px 24px;
+}
+
+.vl-footer__brand {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.vl-footer__brand .vl-logo__icon {
+  color: var(--color-primary-muted);
+}
+
+.vl-footer__brand strong {
+  color: white;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.vl-footer__brand p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.vl-footer h4 {
+  color: white;
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.vl-footer a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.vl-footer a:hover {
+  color: white;
+}
+
+.vl-footer__copy {
+  border-top: 1px solid #333;
+  padding: 16px 0;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .vl-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Loading / error */
+.vl-loading,
+.vl-error {
+  text-align: center;
+  padding: 48px;
+  color: var(--color-text-muted);
+}
+
+.vl-error {
+  color: #c62828;
+}
+
+/* Page sections padding */
+.vl-page-section {
+  padding: 64px 0;
+}
+
+.vl-page-section--soft {
+  background: var(--color-bg-soft);
+}

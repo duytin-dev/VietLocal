@@ -1,0 +1,57 @@
+.vl-fav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition:
+    color var(--transition),
+    background var(--transition),
+    transform 0.15s ease;
+}
+
+.vl-fav-btn:hover:not(:disabled) {
+  color: #e11d48;
+  transform: scale(1.05);
+}
+
+.vl-fav-btn--active {
+  color: #e11d48;
+}
+
+.vl-fav-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.list-card--dest {
+  position: relative;
+}
+
+.list-card__fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.home-dest-card {
+  position: relative;
+}
+
+.home-dest-card__fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.detail-page__fav {
+  margin-top: 12px;
+}

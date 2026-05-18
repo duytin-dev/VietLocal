@@ -1,0 +1,106 @@
+.my-trip-section {
+  margin-bottom: 28px;
+}
+
+.my-trip-section__title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.my-trip-section__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.my-trip-section__field select {
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.my-trip-card {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.my-trip-card__title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.my-trip-card__duration {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.my-trip-card__guide {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.my-trip-card__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.my-trip-card__btn {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.my-trip-card__btn--outline {
+  border: 1.5px solid var(--color-primary);
+  background: white;
+  color: var(--color-primary-dark);
+}
+
+.my-trip-card__btn--outline:hover {
+  background: var(--color-bg-soft);
+}
+
+.my-trip-card__btn--primary {
+  border: 1.5px solid var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+}
+
+.my-trip-card__btn--primary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.my-trip-links {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.my-trip-links li {
+  margin-bottom: 2px;
+}

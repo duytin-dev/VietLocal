@@ -1,0 +1,411 @@
+.about-process {
+  padding: 56px 24px 48px;
+  background: linear-gradient(180deg, #f8faf9 0%, #ffffff 40%);
+}
+
+.about-process__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.about-process__head h2 {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.about-process__head p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.about-process__track {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(168px, 1fr));
+  gap: 12px;
+  align-items: start;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+.about-process__step {
+  position: relative;
+  text-align: center;
+  scroll-snap-align: start;
+  min-width: 168px;
+}
+
+.about-process__num {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(27, 122, 74, 0.35);
+}
+
+.about-process__step h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 6px;
+  line-height: 1.35;
+  min-height: 2.6em;
+}
+
+.about-process__step > p {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0 0 12px;
+  min-height: 3.2em;
+}
+
+.about-process__arrow {
+  position: absolute;
+  top: 18px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 24' fill='none'%3E%3Cpath d='M4 12h28M24 4l12 8-12 8' stroke='%231b7a4a' stroke-width='2' stroke-dasharray='4 3'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.about-process__step:last-child .about-process__arrow {
+  display: none;
+}
+
+/* —— Mockup cards (phone-style) —— */
+.proc-mock {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  text-align: left;
+  overflow: hidden;
+  font-size: 0.65rem;
+  min-height: 200px;
+}
+
+.proc-mock--search {
+  position: relative;
+  padding: 0;
+  min-height: 220px;
+}
+
+.proc-mock--search img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.proc-mock__search-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+  background: white;
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.proc-mock__search-bar span {
+  flex: 1;
+  color: var(--color-text-light);
+  font-size: 0.6rem;
+}
+
+.proc-mock__search-bar button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.proc-mock--form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.proc-mock--form label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.proc-mock--form label span {
+  font-size: 0.55rem;
+  color: var(--color-text-light);
+}
+
+.proc-mock--form label strong {
+  font-size: 0.62rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.proc-mock__btn {
+  display: block;
+  text-align: center;
+  background: var(--color-primary);
+  color: white !important;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  margin-top: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+}
+
+.proc-mock--ai {
+  padding: 10px;
+}
+
+.proc-mock__tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.proc-mock__tabs span {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.55rem;
+  border: 1px solid var(--color-border);
+}
+
+.proc-mock__tabs span.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.proc-mock--ai ul {
+  margin: 0 0 8px;
+  padding-left: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.proc-mock__price {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+  font-size: 0.62rem;
+}
+
+.proc-mock__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.proc-mock__actions button {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: white;
+  font-size: 0.55rem;
+  font-family: inherit;
+}
+
+.proc-mock__actions button.primary {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.proc-mock--guides {
+  padding: 8px;
+}
+
+.proc-mock__guide {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.proc-mock__guide:last-of-type {
+  border-bottom: none;
+}
+
+.proc-mock__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8e6d4, #1b7a4a);
+  flex-shrink: 0;
+}
+
+.proc-mock__guide strong {
+  display: block;
+  font-size: 0.62rem;
+}
+
+.proc-mock__guide span {
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+}
+
+.proc-mock__guide-price {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
+.proc-mock__link {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.58rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.proc-mock--pay {
+  padding: 10px;
+}
+
+.proc-mock--pay p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 6px;
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+}
+
+.proc-mock--pay p strong {
+  color: var(--color-text);
+}
+
+.proc-mock__total {
+  padding-top: 6px;
+  margin-top: 6px !important;
+  border-top: 1px dashed var(--color-border);
+  font-weight: 700;
+}
+
+.proc-mock__total strong {
+  color: var(--color-primary) !important;
+}
+
+.proc-mock__pay-methods {
+  margin: 8px 0;
+}
+
+.proc-mock__pay-methods label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.55rem;
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+}
+
+.proc-mock--trip {
+  padding: 10px;
+}
+
+.proc-mock--trip header {
+  font-weight: 700;
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+}
+
+.proc-mock__trip-card {
+  background: var(--color-primary-light);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.proc-mock__trip-card strong {
+  display: block;
+  font-size: 0.62rem;
+  margin-bottom: 4px;
+}
+
+.proc-mock__trip-card > span {
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+}
+
+.proc-mock__trip-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.proc-mock__trip-actions button {
+  flex: 1;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid var(--color-primary);
+  background: white;
+  font-size: 0.55rem;
+  font-family: inherit;
+}
+
+.proc-mock__trip-actions button.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.proc-mock--trip ul {
+  margin: 0;
+  padding-left: 14px;
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.about-process__cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+  .about-process__track {
+    grid-template-columns: repeat(6, minmax(200px, 220px));
+  }
+}
+
+@media (max-width: 768px) {
+  .about-process__arrow {
+    display: none;
+  }
+}

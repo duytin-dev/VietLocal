@@ -1,0 +1,354 @@
+.about {
+  background: var(--color-bg);
+}
+
+/* —— Hero —— */
+.about-hero {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    95deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.92) 38%,
+    rgba(255, 255, 255, 0.45) 58%,
+    transparent 75%
+  );
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 56px 24px 64px;
+}
+
+.about-hero__content {
+  max-width: 52%;
+  min-width: 320px;
+}
+
+.about-hero__content h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.35;
+  margin: 0 0 20px;
+}
+
+.about-hero__content > p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+
+.about-hero__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 32px;
+  margin-top: 32px;
+}
+
+.about-hero__feat {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.about-hero__feat-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.about-hero__feat strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.about-hero__feat > div > span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* —— Sections (Philosophy / Vision) —— */
+.about-section {
+  padding: 40px 24px;
+}
+
+.about-section__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 42%) 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: white;
+}
+
+.about-section__img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.about-section__panel {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-section__panel--gray {
+  background: #f3f5f4;
+}
+
+.about-section__badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: white;
+}
+
+.about-section__panel h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin: 0 0 16px;
+}
+
+.about-section__panel p {
+  margin: 0 0 12px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.about-section__panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* —— Mission —— */
+.about-section__grid--mission {
+  grid-template-columns: 1fr minmax(300px, 48%);
+}
+
+.about-section__grid--mission .about-section__panel {
+  background: white;
+}
+
+.about-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.about-checklist li {
+  position: relative;
+  padding: 10px 0 10px 32px;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-checklist li:last-child {
+  border-bottom: none;
+}
+
+.about-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-mission-gallery {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  background: #f3f5f4;
+}
+
+.about-mission-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  min-height: 120px;
+}
+
+.about-mission-gallery__main {
+  grid-row: 1 / span 2;
+  min-height: 280px;
+}
+
+/* —— Why bar —— */
+.about-why-bar {
+  padding: 24px 24px 80px;
+}
+
+.about-why-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #f0f2f1;
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-why-bar__title {
+  flex-shrink: 0;
+  width: 140px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.about-why-bar__items {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.about-why-bar__item {
+  text-align: left;
+}
+
+.about-why-bar__icon {
+  display: flex;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.about-why-bar__item strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.about-why-bar__item p {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.about-why-bar__photo {
+  flex-shrink: 0;
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 1100px) {
+  .about-hero__content {
+    max-width: 65%;
+  }
+
+  .about-why-bar__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-why-bar__photo {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero__content {
+    max-width: 100%;
+  }
+
+  .about-hero__features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section__grid,
+  .about-section__grid--mission {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section__img {
+    min-height: 220px;
+  }
+
+  .about-mission-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-mission-gallery__main {
+    grid-row: span 1;
+    grid-column: 1 / -1;
+    min-height: 200px;
+  }
+
+  .about-why-bar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-why-bar__title {
+    width: auto;
+  }
+
+  .about-why-bar__items {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
