@@ -112,6 +112,15 @@
   font-weight: 800;
 }
 
+.admin-sidebar__logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  padding: 2px;
+}
+
 .admin-sidebar__brand strong {
   display: block;
   font-size: 1rem;

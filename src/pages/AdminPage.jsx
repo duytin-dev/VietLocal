@@ -265,7 +265,7 @@ export default function AdminPage() {
     <div className="admin-layout">
       <aside className="admin-sidebar">
         <div className="admin-sidebar__brand">
-          <span className="admin-sidebar__logo">VL</span>
+          <img src="/logo-vivudi.png" alt="VivuDi" className="admin-sidebar__logo-img" />
           <div>
             <strong>VivuDi</strong>
             <small>Admin</small>

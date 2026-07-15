@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom';
-import { IconPin } from './Icons';
 import FavoritesBell from './FavoritesBell';
 import NotificationBell from './NotificationBell';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -24,14 +23,8 @@ export default function Header({ variant = 'default' }) {
   return (
     <header className={`vl-header ${variant === 'planner' ? 'vl-header--planner' : ''}`}>
       <div className="vl-header__inner">
-        <Link to="/" className="vl-logo">
-          <span className="vl-logo__icon">
-            <IconPin size={28} />
-          </span>
-          <span className="vl-logo__text">
-            <strong>VivuDi</strong>
-            <small>{t('common.tagline')}</small>
-          </span>
+        <Link to="/" className="vl-logo" aria-label="VivuDi">
+          <img src="/logo-vivudi.png" alt="VivuDi" className="vl-logo__img" />
         </Link>
 
         <nav className="vl-nav" aria-label={t('nav.mainAria')}>

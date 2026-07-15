@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { IconPin } from './Icons';
 import { useI18n } from '../i18n/useI18n';
 
 export default function Footer() {
@@ -10,13 +9,8 @@ export default function Footer() {
     <footer className="vl-footer">
       <div className="vl-container vl-footer__grid">
         <div className="vl-footer__brand">
-          <span className="vl-logo__icon">
-            <IconPin size={24} />
-          </span>
-          <div>
-            <strong>VivuDi</strong>
-            <p>{t('common.tagline')}</p>
-          </div>
+          <img src="/logo-vivudi.png" alt="VivuDi" className="vl-footer__logo" />
+          <p>{t('common.tagline')}</p>
         </div>
         <div>
           <h4>{t('footer.explore')}</h4>

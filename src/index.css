@@ -159,18 +159,20 @@ a {
 
 .vl-footer__brand {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
   align-items: flex-start;
 }
 
-.vl-footer__brand .vl-logo__icon {
-  color: var(--color-primary-muted);
-}
-
-.vl-footer__brand strong {
-  color: white;
+.vl-footer__logo {
   display: block;
-  margin-bottom: 4px;
+  height: 72px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px 10px;
 }
 
 .vl-footer__brand p {

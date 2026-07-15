@@ -46,7 +46,7 @@ export default {
     people: 'người',
     favorites: 'Yêu thích',
     notifications: 'Thông báo',
-    tagline: 'Travel like a local',
+    tagline: 'Đi để hiểu, trải nghiệm để nhớ',
     allRights: 'All rights reserved.',
   },
   regions: {

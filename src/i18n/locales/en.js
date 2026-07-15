@@ -46,7 +46,7 @@ export default {
     people: 'guests',
     favorites: 'Favorites',
     notifications: 'Notifications',
-    tagline: 'Travel like a local',
+    tagline: 'Travel to understand, experience to remember',
     allRights: 'All rights reserved.',
   },
   regions: {
