@@ -1,5 +1,5 @@
 /** BE production (Render) — dùng khi deploy Vercel mà thiếu VITE_API_BASE_URL */
-const RENDER_API_BASE = 'https://be123-vietlocal.onrender.com';
+const RENDER_API_BASE = 'https://be-vietlocal.onrender.com';
 
 /** API base — không có slash cuối. Vite: VITE_API_BASE_URL */
 export function getApiBaseUrl() {
