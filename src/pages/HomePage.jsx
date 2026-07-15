@@ -241,7 +241,7 @@ export default function HomePage() {
           ))}
           <img
             className="home-why__img"
-            src="https://images.unsplash.com/photo-1527631742313-4f1f3d1b3f1b?w=400&q=80"
+            src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=80"
             alt=""
           />
         </div>
