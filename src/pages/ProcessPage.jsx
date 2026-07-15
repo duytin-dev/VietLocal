@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './ProcessPage.css';
 
 const STEPS = [
-  { num: 1, title: 'Tìm kiếm & truy cập VietLocal', desc: 'Khám phá điểm đến và dịch vụ.', visual: 'search' },
+  { num: 1, title: 'Tìm kiếm & truy cập VivuDi', desc: 'Khám phá điểm đến và dịch vụ.', visual: 'search' },
   { num: 2, title: 'Nhập thông tin & nhu cầu', desc: 'Điểm đến, thời gian, ngân sách.', visual: 'form' },
   { num: 3, title: 'AI đề xuất lịch trình', desc: 'Lịch trình cá nhân hóa theo ngày.', visual: 'ai' },
   { num: 4, title: 'Chọn hướng dẫn viên', desc: 'So sánh tier, rating, giá.', visual: 'guides' },
@@ -24,7 +24,7 @@ export default function ProcessPage() {
     <article className="process-page vl-container">
       <header className="process-page__head">
         <h1>QUY TRÌNH SỬ DỤNG WEBSITE CỦA DU KHÁCH</h1>
-        <p>Từ tìm kiếm đến trải nghiệm — 6 bước cùng VietLocal</p>
+        <p>Từ tìm kiếm đến trải nghiệm — 6 bước cùng VivuDi</p>
       </header>
       <section className="process-steps">
         {STEPS.map((step, i) => (

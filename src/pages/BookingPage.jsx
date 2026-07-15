@@ -102,7 +102,7 @@ export default function BookingPage() {
         destinationName: selectedTrip.destinationName,
         tripTitle,
       });
-      window.dispatchEvent(new CustomEvent('vietlocal:bookings-updated'));
+      window.dispatchEvent(new CustomEvent('vivudi:bookings-updated'));
       navigate(`/bookings/${booking.id}/pay`);
     } catch (err) {
       if (err.code === 'GUIDE_NOT_AVAILABLE') {

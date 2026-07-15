@@ -1,7 +1,7 @@
 import { getApiBaseUrl, getPaymentWebhookSecret } from './config';
 
 const BASE = getApiBaseUrl();
-const TOKEN_KEY = 'vietlocal_auth_token';
+const TOKEN_KEY = 'vivudi_auth_token';
 
 function authHeaders() {
   const token = localStorage.getItem(TOKEN_KEY);

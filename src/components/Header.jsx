@@ -29,7 +29,7 @@ export default function Header({ variant = 'default' }) {
             <IconPin size={28} />
           </span>
           <span className="vl-logo__text">
-            <strong>VietLocal</strong>
+            <strong>VivuDi</strong>
             <small>{t('common.tagline')}</small>
           </span>
         </Link>

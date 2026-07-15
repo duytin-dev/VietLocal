@@ -47,8 +47,8 @@ export default function NotificationBell() {
 
   useEffect(() => {
     const onUpdate = () => load();
-    window.addEventListener('vietlocal:bookings-updated', onUpdate);
-    return () => window.removeEventListener('vietlocal:bookings-updated', onUpdate);
+    window.addEventListener('vivudi:bookings-updated', onUpdate);
+    return () => window.removeEventListener('vivudi:bookings-updated', onUpdate);
   }, [load]);
 
   useEffect(() => {

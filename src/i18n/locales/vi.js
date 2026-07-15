@@ -21,7 +21,7 @@ export default {
     loginTitle: 'Chào mừng trở lại',
     loginSub: 'Đăng nhập để lưu lịch trình và đặt tour dễ hơn.',
     registerTitle: 'Tạo tài khoản',
-    registerSub: 'Tham gia VietLocal — khám phá Việt Nam cùng hướng dẫn viên địa phương.',
+    registerSub: 'Tham gia VivuDi — khám phá Việt Nam cùng hướng dẫn viên địa phương.',
     email: 'Email',
     password: 'Mật khẩu',
     fullName: 'Họ và tên',
@@ -94,7 +94,7 @@ export default {
     destSubtitle: 'Những điểm đến được yêu thích nhất',
     foodTitle: 'Ẩm thực không thể bỏ lỡ',
     foodSubtitle: 'Những món ngon nhất định phải thử khi đến Việt Nam',
-    whyTitle: 'Tại sao chọn VietLocal?',
+    whyTitle: 'Tại sao chọn VivuDi?',
     why1Title: 'AI cá nhân hóa',
     why1Desc: 'Lịch trình theo sở thích',
     why2Title: 'Trải nghiệm địa phương',
@@ -188,7 +188,7 @@ export default {
     startAi: 'Bắt đầu với AI Planner',
     viewGuides: 'Xem hướng dẫn viên',
     steps: [
-      { title: 'Tìm kiếm & truy cập VietLocal', desc: 'Truy cập website và bắt đầu hành trình của bạn.' },
+      { title: 'Tìm kiếm & truy cập VivuDi', desc: 'Truy cập website và bắt đầu hành trình của bạn.' },
       { title: 'Nhập thông tin & nhu cầu', desc: 'Cung cấp thông tin chuyến đi, sở thích và nhu cầu để AI hiểu bạn.' },
       { title: 'AI đề xuất lịch trình cá nhân hóa', desc: 'AI gợi ý lịch trình, hoạt động, địa điểm và ẩm thực phù hợp.' },
       { title: 'Chọn hướng dẫn viên phù hợp', desc: 'Chọn HDV địa phương phù hợp phong cách và ngân sách.' },
@@ -198,7 +198,7 @@ export default {
   },
   experiences: {
     title: 'Trải nghiệm',
-    subtitle: 'Dịch vụ địa phương do VietLocal cung cấp',
+    subtitle: 'Dịch vụ địa phương do VivuDi cung cấp',
   },
   cuisine: {
     title: 'Ẩm thực',
@@ -206,7 +206,7 @@ export default {
   },
   blog: {
     title: 'Blog',
-    subtitle: 'Câu chuyện và mẹo du lịch từ VietLocal',
+    subtitle: 'Câu chuyện và mẹo du lịch từ VivuDi',
   },
   myTrip: {
     sectionTitle: 'Chuyến đi của tôi',
@@ -225,7 +225,7 @@ export default {
     payNow: 'Thanh toán ngay',
     remove: 'Xóa khỏi danh sách',
     tripWithGuide: 'Tour cùng {{name}}',
-    tripDefault: 'Chuyến đi VietLocal',
+    tripDefault: 'Chuyến đi VivuDi',
   },
   payment: {
     title: 'Thanh toán',

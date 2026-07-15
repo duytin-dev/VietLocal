@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { api } from '../api/client';
 import { useAuth } from '../auth/AuthContext';
 
-const GUEST_KEY = 'vietlocal_favorites';
+const GUEST_KEY = 'vivudi_favorites';
 
 const FavoritesContext = createContext(null);
 

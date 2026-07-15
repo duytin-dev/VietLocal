@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { api } from '../api/client';
 
-const TOKEN_KEY = 'vietlocal_auth_token';
-const USER_KEY = 'vietlocal_auth_user';
+const TOKEN_KEY = 'vivudi_auth_token';
+const USER_KEY = 'vivudi_auth_user';
 
 const AuthContext = createContext(null);
 

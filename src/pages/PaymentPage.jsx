@@ -16,7 +16,7 @@ export default function PaymentPage() {
     api.getPaymentQr(id).then((p) => {
       setPayment(p);
       if (p?.status === 'PAID') {
-        window.dispatchEvent(new CustomEvent('vietlocal:bookings-updated'));
+        window.dispatchEvent(new CustomEvent('vivudi:bookings-updated'));
       }
     }).catch(() => setPayment(null));
     api.getBooking(id).then(setBooking).catch(() => setBooking(null));
@@ -34,7 +34,7 @@ export default function PaymentPage() {
     try {
       await api.confirmPayment(id);
       load();
-      window.dispatchEvent(new CustomEvent('vietlocal:bookings-updated'));
+      window.dispatchEvent(new CustomEvent('vivudi:bookings-updated'));
     } catch (err) {
       setConfirmError(err.message || t('payment.confirmFailed'));
     } finally {

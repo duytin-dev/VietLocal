@@ -225,7 +225,7 @@ export default function AdminPage() {
         <section className="admin-login-card">
           <div className="admin-login-card__brand">
             <span className="admin-login-card__logo">VL</span>
-            <h1>VietLocal Admin</h1>
+            <h1>VivuDi Admin</h1>
           </div>
           <p>Quản lý đặt tour, người dùng và tương tác AI</p>
           <form onSubmit={handleLogin}>
@@ -267,7 +267,7 @@ export default function AdminPage() {
         <div className="admin-sidebar__brand">
           <span className="admin-sidebar__logo">VL</span>
           <div>
-            <strong>VietLocal</strong>
+            <strong>VivuDi</strong>
             <small>Admin</small>
           </div>
         </div>

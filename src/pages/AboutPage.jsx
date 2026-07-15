@@ -81,9 +81,9 @@ export default function AboutPage() {
         <div className="about-hero__overlay" />
         <div className="vl-container about-hero__inner">
           <div className="about-hero__content">
-            <h1>VietLocal – Du lịch theo cách của người bản địa</h1>
+            <h1>VivuDi – Du lịch theo cách của người bản địa</h1>
             <p>
-              VietLocal là nền tảng du lịch công nghệ giúp bạn dễ dàng lên kế hoạch và trải nghiệm những
+              VivuDi là nền tảng du lịch công nghệ giúp bạn dễ dàng lên kế hoạch và trải nghiệm những
               hành trình chân thực, gần gũi với đời sống địa phương.
             </p>
             <p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               nghiệm cá nhân hóa, linh hoạt và đáng nhớ.
             </p>
             <p>
-              Với VietLocal, mỗi chuyến đi không chỉ là tham quan, mà là cơ hội để bạn sống, cảm và kết
+              Với VivuDi, mỗi chuyến đi không chỉ là tham quan, mà là cơ hội để bạn sống, cảm và kết
               nối trọn vẹn với văn hóa và con người Việt Nam.
             </p>
             <div className="about-hero__features">
@@ -123,7 +123,7 @@ export default function AboutPage() {
               Mọi điều tốt đẹp đều bắt đầu từ sự thật và tình yêu dành cho con người.
             </p>
             <p>
-              VietLocal tin rằng khi trở về với gốc rễ tự nhiên, con người mới tìm lại được sự cân bằng
+              VivuDi tin rằng khi trở về với gốc rễ tự nhiên, con người mới tìm lại được sự cân bằng
               và vẻ đẹp thật sự của mình.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
             </span>
             <h2>SỨ MỆNH</h2>
             <p>
-              VietLocal phát triển nền tảng du lịch công nghệ tích hợp AI, giúp du khách:
+              VivuDi phát triển nền tảng du lịch công nghệ tích hợp AI, giúp du khách:
             </p>
             <ul className="about-checklist">
               {MISSION_POINTS.map((item) => (
@@ -175,7 +175,7 @@ export default function AboutPage() {
 
       <section className="about-why-bar vl-container">
         <div className="about-why-bar__inner">
-          <h2 className="about-why-bar__title">Tại sao chọn VietLocal?</h2>
+          <h2 className="about-why-bar__title">Tại sao chọn VivuDi?</h2>
           <div className="about-why-bar__items">
             {WHY_ITEMS.map(({ title, desc, Icon }) => (
               <div key={title} className="about-why-bar__item">

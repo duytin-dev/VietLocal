@@ -21,7 +21,7 @@ export default {
     loginTitle: 'Welcome back',
     loginSub: 'Sign in to save itineraries and book tours more easily.',
     registerTitle: 'Create an account',
-    registerSub: 'Join VietLocal — explore Vietnam with local guides.',
+    registerSub: 'Join VivuDi — explore Vietnam with local guides.',
     email: 'Email',
     password: 'Password',
     fullName: 'Full name',
@@ -94,7 +94,7 @@ export default {
     destSubtitle: 'Most loved places to visit',
     foodTitle: 'Must-try cuisine',
     foodSubtitle: 'Dishes you should not miss in Vietnam',
-    whyTitle: 'Why VietLocal?',
+    whyTitle: 'Why VivuDi?',
     why1Title: 'Personalized AI',
     why1Desc: 'Trips built around you',
     why2Title: 'Local experiences',
@@ -183,12 +183,12 @@ export default {
     dayUnit: 'days',
   },
   process: {
-    title: 'HOW GUESTS USE VIETLOCAL',
+    title: 'HOW GUESTS USE VIVUDI',
     subtitle: '6 simple steps for a local-style trip',
     startAi: 'Start with AI Planner',
     viewGuides: 'Browse tour guides',
     steps: [
-      { title: 'Find & visit VietLocal', desc: 'Open the website and start your journey.' },
+      { title: 'Find & visit VivuDi', desc: 'Open the website and start your journey.' },
       { title: 'Share your trip needs', desc: 'Tell us preferences so AI understands you.' },
       { title: 'AI suggests your itinerary', desc: 'Get places, activities and food ideas that fit.' },
       { title: 'Choose the right guide', desc: 'Pick a local guide matching style and budget.' },
@@ -198,7 +198,7 @@ export default {
   },
   experiences: {
     title: 'Experiences',
-    subtitle: 'Local services powered by VietLocal',
+    subtitle: 'Local services powered by VivuDi',
   },
   cuisine: {
     title: 'Cuisine',
@@ -206,7 +206,7 @@ export default {
   },
   blog: {
     title: 'Travel blog',
-    subtitle: 'Stories and tips from VietLocal',
+    subtitle: 'Stories and tips from VivuDi',
   },
   myTrip: {
     sectionTitle: 'My trip',
@@ -225,7 +225,7 @@ export default {
     payNow: 'Pay now',
     remove: 'Remove from list',
     tripWithGuide: 'Tour with {{name}}',
-    tripDefault: 'VietLocal trip',
+    tripDefault: 'VivuDi trip',
   },
   payment: {
     title: 'Payment',

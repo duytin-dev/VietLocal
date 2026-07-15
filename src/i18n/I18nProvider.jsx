@@ -2,7 +2,7 @@ import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 import vi from './locales/vi';
 import en from './locales/en';
 
-const STORAGE_KEY = 'vietlocal-lang';
+const STORAGE_KEY = 'vivudi-lang';
 const MESSAGES = { vi, en };
 
 export const I18nContext = createContext(null);

@@ -14,7 +14,7 @@ export default function Footer() {
             <IconPin size={24} />
           </span>
           <div>
-            <strong>VietLocal</strong>
+            <strong>VivuDi</strong>
             <p>{t('common.tagline')}</p>
           </div>
         </div>
@@ -32,13 +32,13 @@ export default function Footer() {
         </div>
         <div>
           <h4>{t('footer.contact')}</h4>
-          <p>hello@vietlocal.vn</p>
+          <p>hello@vivudi.vn</p>
           <p>1900 xxxx</p>
         </div>
       </div>
       <div className="vl-footer__copy">
         <div className="vl-container">
-          © {year} VietLocal. {t('common.allRights')}
+          © {year} VivuDi. {t('common.allRights')}
         </div>
       </div>
     </footer>

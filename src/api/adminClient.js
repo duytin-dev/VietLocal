@@ -1,7 +1,7 @@
 import { getApiBaseUrl } from './config';
 
 const BASE = getApiBaseUrl();
-const STORAGE_KEY = 'vietlocal_admin_secret';
+const STORAGE_KEY = 'vivudi_admin_secret';
 
 export function getAdminSecret() {
   return sessionStorage.getItem(STORAGE_KEY) || '';
