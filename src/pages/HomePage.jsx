@@ -13,8 +13,8 @@ const HERO_IMG =
   'https://images.unsplash.com/photo-1528127269322-539801943592?w=1920&q=80';
 
 const FOOD_FALLBACK = [
-  { title: 'Phở Hà Nội', place: 'Hà Nội', image: 'https://images.unsplash.com/photo-1582878826629-29ae7d1620f9?w=400&q=80', rating: 4.9 },
-  { title: 'Bún chả', place: 'Hà Nội', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80', rating: 4.8 },
+  { title: 'Phở Hà Nội', place: 'Hà Nội', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80', rating: 4.9 },
+  { title: 'Bún chả', place: 'Hà Nội', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80', rating: 4.8 },
   { title: 'Cao lầu', place: 'Hội An', image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&q=80', rating: 4.9 },
   { title: 'Bánh xèo', place: 'Miền Trung', image: 'https://images.unsplash.com/photo-1604908176997-125f29cc4c3c?w=400&q=80', rating: 4.7 },
 ];

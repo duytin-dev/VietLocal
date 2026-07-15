@@ -5,7 +5,7 @@ export const BLOG_COVER_BY_SLUG = {
   '5-mon-an-da-nang': `https://images.unsplash.com/photo-1563245372-f21724e3856d${Q}`,
   'hoi-an-ve-dem': `https://images.unsplash.com/photo-1528127269322-539801943592${Q}`,
   'trekking-fansipan': `https://images.unsplash.com/photo-1506905925346-21bda4d32df4${Q}`,
-  'am-thuc-ha-noi': `https://images.unsplash.com/photo-1582878826629-29ae7d1620f9${Q}`,
+  'am-thuc-ha-noi': `https://images.unsplash.com/photo-1555939594-58d7cb561ad1${Q}`,
   'homestay-tay-bac': `https://images.unsplash.com/photo-1464822759023-fed622ff2c3b${Q}`,
   'phu-quoc-3-ngay': `https://images.unsplash.com/photo-1514282401047-d79a71a590e8${Q}`,
   'hue-mot-ngay': `https://images.unsplash.com/photo-1559592413-7cec4d0cae2b${Q}`,
