@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../api/client';
+import { resolveBlogCover } from '../data/blogCoverImages';
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -14,7 +15,7 @@ export default function BlogDetailPage() {
 
   return (
     <article className="detail-page vl-container">
-      <img src={post.coverImageUrl} alt="" className="detail-page__hero" />
+      <img src={resolveBlogCover(post)} alt="" className="detail-page__hero" />
       {post.destinationName && <span className="detail-page__region">{post.destinationName}</span>}
       <h1>{post.title}</h1>
       <p className="detail-page__excerpt">{post.excerpt}</p>

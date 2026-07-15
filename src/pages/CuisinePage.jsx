@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api/client';
+import { resolveBlogCover } from '../data/blogCoverImages';
 import { useI18n } from '../i18n/useI18n';
 import { IconLeaf, IconStar } from '../components/Icons';
 import './ListPages.css';
@@ -29,7 +30,7 @@ export default function CuisinePage() {
         {items.map((b) => (
           <Link key={b.id} to={`/blog/${b.slug}`} className="home-food-card">
             <section className="home-food-card__img">
-              <img src={b.coverImageUrl} alt={b.title} />
+              <img src={resolveBlogCover(b)} alt={b.title} />
               <span className="home-food-card__rating">
                 <IconStar size={12} /> 4.8
               </span>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api/client';
+import { resolveBlogCover } from '../data/blogCoverImages';
 import { useI18n } from '../i18n/useI18n';
 import { IconLeaf } from '../components/Icons';
 import './ListPages.css';
@@ -32,7 +33,7 @@ export default function BlogPage() {
         <section className="list-grid list-grid--blog">
           {items.map((b) => (
             <Link key={b.id} to={`/blog/${b.slug}`} className="blog-card">
-              <img src={b.coverImageUrl} alt={b.title} />
+              <img src={resolveBlogCover(b)} alt={b.title} />
               <section>
                 <strong>{b.title}</strong>
                 <p>{b.excerpt}</p>

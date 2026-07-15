@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../api/client';
 import { getDestinationImage } from '../data/destinationImages';
+import { resolveBlogCover } from '../data/blogCoverImages';
 import { useI18n } from '../i18n/useI18n';
 import FavoriteButton from '../components/FavoriteButton';
 import { IconSparkle, IconLeaf, IconArrowRight, IconStar } from '../components/Icons';
@@ -72,7 +73,7 @@ export default function HomePage() {
     ? blogs.slice(0, 4).map((b) => ({
         title: b.title,
         place: b.destinationName || t('common.vietnam'),
-        image: b.coverImageUrl,
+        image: resolveBlogCover(b),
         rating: 4.8,
         slug: b.slug,
       }))
