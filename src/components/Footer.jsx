@@ -12,19 +12,19 @@ export default function Footer() {
           <img src="/logo-vivudi.png" alt="VivuDi" className="vl-footer__logo" />
           <p>{t('common.tagline')}</p>
         </div>
-        <div>
+        <div className="vl-footer__col">
           <h4>{t('footer.explore')}</h4>
           <Link to="/destinations">{t('nav.destinations')}</Link>
           <Link to="/experiences">{t('nav.experiences')}</Link>
           <Link to="/guides">{t('nav.guides')}</Link>
         </div>
-        <div>
+        <div className="vl-footer__col">
           <h4>{t('footer.support')}</h4>
           <Link to="/about">{t('nav.about')}</Link>
           <Link to="/process">{t('footer.process')}</Link>
           <Link to="/ai-planner">{t('footer.aiPlanner')}</Link>
         </div>
-        <div>
+        <div className="vl-footer__col vl-footer__col--contact">
           <h4>{t('footer.contact')}</h4>
           <p>hello@vivudi.vn</p>
           <p>1900 xxxx</p>

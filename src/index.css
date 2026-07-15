@@ -155,6 +155,7 @@ a {
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 40px;
   padding: 48px 24px;
+  align-items: start;
 }
 
 .vl-footer__brand {
@@ -178,6 +179,14 @@ a {
 .vl-footer__brand p {
   margin: 0;
   font-size: 0.85rem;
+  line-height: 1.45;
+  max-width: 28ch;
+}
+
+.vl-footer__col p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
 .vl-footer h4 {
@@ -206,32 +215,93 @@ a {
   text-align: center;
 }
 
+/* Tablet: brand full width, 3 link columns underneath */
 @media (max-width: 992px) {
   .vl-footer__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 20px;
     padding: 40px 20px;
+  }
+
+  .vl-footer__brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vl-footer__brand p {
+    max-width: 36ch;
   }
 
   .vl-footer__logo {
     height: 64px;
     max-width: 200px;
   }
+
+  .vl-footer__col {
+    text-align: center;
+  }
+
+  .vl-footer__col a,
+  .vl-footer__col p {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
+/* Phone: brand + 2-col links + contact full width */
 @media (max-width: 640px) {
   .vl-footer {
     margin-top: 48px;
   }
 
   .vl-footer__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 32px 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+    padding: 36px 20px 28px;
+  }
+
+  .vl-footer__brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding-bottom: 4px;
   }
 
   .vl-footer__logo {
-    height: 56px;
+    height: 52px;
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .vl-footer__brand p {
+    font-size: 0.82rem;
+    max-width: 28ch;
+    margin: 0 auto;
+  }
+
+  .vl-footer__col {
+    text-align: center;
+  }
+
+  .vl-footer__col h4 {
+    margin-bottom: 10px;
+  }
+
+  .vl-footer__col a {
+    margin-bottom: 10px;
+  }
+
+  .vl-footer__col--contact {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 4px;
+    border-top: 1px solid #333;
+  }
+
+  .vl-footer__col--contact h4 {
+    margin-top: 4px;
   }
 
   .vl-footer__copy {
