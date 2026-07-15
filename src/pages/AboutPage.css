@@ -162,6 +162,70 @@
   margin-bottom: 0;
 }
 
+.about-section__lead {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-primary-dark);
+  line-height: 1.55;
+}
+
+.about-values {
+  padding: 8px 24px 48px;
+}
+
+.about-values__head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.about-values__head h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.about-values__slogan {
+  max-width: 720px;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.about-values__card {
+  background: #f3f5f4;
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-values__icon {
+  display: flex;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.about-values__card strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.about-values__card p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
 /* —— Mission —— */
 .about-section__grid--mission {
   grid-template-columns: 1fr minmax(300px, 48%);
@@ -308,6 +372,10 @@
   .about-why-bar__photo {
     display: none;
   }
+
+  .about-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -326,6 +394,10 @@
 
   .about-section__img {
     min-height: 220px;
+  }
+
+  .about-values__grid {
+    grid-template-columns: 1fr;
   }
 
   .about-mission-gallery {

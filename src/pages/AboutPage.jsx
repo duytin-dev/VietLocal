@@ -38,38 +38,31 @@ const HERO_FEATURES = [
   },
 ];
 
-const MISSION_POINTS = [
-  'Dễ dàng lên kế hoạch hành trình cá nhân hóa',
-  'Kết nối với hướng dẫn viên địa phương phù hợp',
-  'Trải nghiệm văn hóa bản địa một cách chân thực và tôn trọng',
-  'Được đồng hành và hỗ trợ trong suốt chuyến đi',
-];
-
-const WHY_ITEMS = [
+const CORE_VALUES = [
   {
-    title: 'AI cá nhân hóa',
-    desc: 'Gợi ý lịch trình phù hợp với sở thích của bạn',
-    Icon: IconAiWhy,
-  },
-  {
-    title: 'Trải nghiệm địa phương',
-    desc: 'Khám phá những điểm đến và hoạt động bản địa độc đáo',
+    title: 'Khám phá',
+    desc: 'Khuyến khích du khách bước ra khỏi những hành trình quen thuộc để khám phá vẻ đẹp thiên nhiên, văn hóa và con người tại từng địa phương.',
     Icon: IconPinWhy,
   },
   {
-    title: 'Hướng dẫn viên bản địa',
-    desc: 'Kết nối với những người địa phương thân thiện và chuyên nghiệp',
+    title: 'Kết nối',
+    desc: 'Xây dựng cầu nối giữa du khách với local guide và cộng đồng địa phương, tạo nên những trải nghiệm gần gũi, ý nghĩa và giàu giá trị văn hóa.',
     Icon: IconGuideWhy,
   },
   {
-    title: 'Hỗ trợ 24/7',
-    desc: 'Đồng hành cùng bạn trong suốt chuyến đi',
-    Icon: IconSupport,
+    title: 'Tin cậy',
+    desc: 'Cam kết cung cấp thông tin minh bạch, dịch vụ chất lượng và môi trường giao dịch an toàn, giúp khách hàng yên tâm trong suốt hành trình.',
+    Icon: IconShieldWhy,
   },
   {
-    title: 'Thanh toán an toàn',
-    desc: 'Bảo mật tuyệt đối, đa dạng phương thức thanh toán',
-    Icon: IconShieldWhy,
+    title: 'Đổi mới',
+    desc: 'Không ngừng ứng dụng công nghệ và cải tiến dịch vụ nhằm mang đến trải nghiệm du lịch thuận tiện, hiện đại và cá nhân hóa cho người dùng.',
+    Icon: IconAiWhy,
+  },
+  {
+    title: 'Bền vững',
+    desc: 'Hướng đến phát triển du lịch có trách nhiệm, góp phần bảo tồn văn hóa, bảo vệ môi trường và nâng cao đời sống của cộng đồng địa phương.',
+    Icon: IconSupport,
   },
 ];
 
@@ -81,18 +74,14 @@ export default function AboutPage() {
         <div className="about-hero__overlay" />
         <div className="vl-container about-hero__inner">
           <div className="about-hero__content">
-            <h1>VivuDi – Du lịch theo cách của người bản địa</h1>
+            <h1>VivuDi – Du lịch như người bản xứ</h1>
             <p>
-              VivuDi là nền tảng du lịch công nghệ giúp bạn dễ dàng lên kế hoạch và trải nghiệm những
-              hành trình chân thực, gần gũi với đời sống địa phương.
+              Mỗi chuyến đi không chỉ là khám phá điểm đến mà còn là cơ hội kết nối với con người và
+              văn hóa địa phương.
             </p>
             <p>
-              Chúng tôi kết hợp trí tuệ nhân tạo với mạng lưới hướng dẫn viên bản địa để mang đến trải
-              nghiệm cá nhân hóa, linh hoạt và đáng nhớ.
-            </p>
-            <p>
-              Với VivuDi, mỗi chuyến đi không chỉ là tham quan, mà là cơ hội để bạn sống, cảm và kết
-              nối trọn vẹn với văn hóa và con người Việt Nam.
+              VivuDi mang đến trải nghiệm bản địa chân thực nhất thông qua sự đồng hành của người dân
+              địa phương, cùng ứng dụng công nghệ để hành trình của bạn trở nên thuận tiện và đáng nhớ.
             </p>
             <div className="about-hero__features">
               {HERO_FEATURES.map(({ title, desc, Icon }) => (
@@ -119,12 +108,15 @@ export default function AboutPage() {
               <IconLeafBadge />
             </span>
             <h2>TRIẾT LÝ THƯƠNG HIỆU</h2>
-            <p>
-              Mọi điều tốt đẹp đều bắt đầu từ sự thật và tình yêu dành cho con người.
+            <p className="about-section__lead">
+              “Mỗi chuyến đi không chỉ là khám phá điểm đến mà còn là cơ hội kết nối với con người và
+              văn hóa địa phương.”
             </p>
             <p>
-              VivuDi tin rằng khi trở về với gốc rễ tự nhiên, con người mới tìm lại được sự cân bằng
-              và vẻ đẹp thật sự của mình.
+              Tại VivuDi, hành trình không chỉ là check-in điểm đến, mà là cơ hội để chạm vào văn hóa và
+              kết nối sâu sắc với con người bản địa. Chúng tôi tin rằng giá trị lớn nhất của mỗi chuyến
+              đi nằm ở trải nghiệm thực tế, những câu chuyện kể và sự gắn kết chân thành. Đây chính là
+              điểm khác biệt định hình nên VivuDi.
             </p>
           </div>
         </div>
@@ -137,17 +129,19 @@ export default function AboutPage() {
               <IconTargetBadge />
             </span>
             <h2>SỨ MỆNH</h2>
+            <p className="about-section__lead">“Du lịch như người bản xứ.”</p>
             <p>
-              VivuDi phát triển nền tảng du lịch công nghệ tích hợp AI, giúp du khách:
+              VivuDi mang đến cho du khách những trải nghiệm bản địa chân thực nhất thông qua sự đồng
+              hành của người dân địa phương. Song song đó, chúng tôi đồng hành cùng cộng đồng để quảng
+              bá văn hóa, tạo việc làm và nâng cao thu nhập bền vững cho người dân tại các điểm đến.
             </p>
-            <ul className="about-checklist">
-              {MISSION_POINTS.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
           </div>
           <div className="about-mission-gallery">
-            <img src={stage1Images.missionMain} alt="Trải nghiệm địa phương" className="about-mission-gallery__main" />
+            <img
+              src={stage1Images.missionMain}
+              alt="Trải nghiệm địa phương"
+              className="about-mission-gallery__main"
+            />
             <img src={stage1Images.missionBoat} alt="Khám phá vịnh" />
             <img src={stage1Images.missionLocal} alt="Kết nối bản địa" />
           </div>
@@ -162,12 +156,36 @@ export default function AboutPage() {
               <IconVisionBadge />
             </span>
             <h2>TẦM NHÌN</h2>
+            <p className="about-section__lead">
+              “Kiến tạo hệ sinh thái du lịch bản địa thông minh, nơi mỗi hành trình đều trở thành một
+              trải nghiệm đáng nhớ.”
+            </p>
             <p>
-              Trở thành nền tảng du lịch công nghệ hàng đầu tại Việt Nam và khu vực, kiến tạo hệ sinh
-              thái trải nghiệm địa phương hóa, nơi du khách dễ dàng khám phá - kết nối - và yêu mến
-              Việt Nam qua những hành trình chân thực và bền vững.
+              VivuDi mong muốn trở thành nền tảng được du khách tin tưởng lựa chọn khi khám phá văn hóa
+              địa phương. Thông qua việc ứng dụng công nghệ và kết nối với local guide, dự án góp phần
+              nâng cao trải nghiệm du lịch, quảng bá văn hóa và phát triển cộng đồng địa phương.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="about-values vl-container">
+        <header className="about-values__head">
+          <h2>GIÁ TRỊ CỐT LÕI</h2>
+          <p className="about-section__lead about-values__slogan">
+            Khám phá — Kết nối — Tin cậy — Đổi mới — Bền vững
+          </p>
+        </header>
+        <div className="about-values__grid">
+          {CORE_VALUES.map(({ title, desc, Icon }) => (
+            <article key={title} className="about-values__card">
+              <span className="about-values__icon">
+                <Icon />
+              </span>
+              <strong>{title}</strong>
+              <p>{desc}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -177,7 +195,7 @@ export default function AboutPage() {
         <div className="about-why-bar__inner">
           <h2 className="about-why-bar__title">Tại sao chọn VivuDi?</h2>
           <div className="about-why-bar__items">
-            {WHY_ITEMS.map(({ title, desc, Icon }) => (
+            {CORE_VALUES.map(({ title, desc, Icon }) => (
               <div key={title} className="about-why-bar__item">
                 <span className="about-why-bar__icon">
                   <Icon />
