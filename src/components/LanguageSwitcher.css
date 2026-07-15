@@ -2,6 +2,15 @@
   position: relative;
 }
 
+.lang-switch__btn {
+  width: auto;
+  min-width: 40px;
+  padding: 0 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .lang-switch__menu {
   position: absolute;
   top: calc(100% + 6px);
