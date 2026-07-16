@@ -40,7 +40,15 @@ export default function DestinationDetailPage() {
       {dest.description && (
         <section className="detail-page__body">
           <h2>{t('common.intro')}</h2>
-          <p className="detail-page__description">{dest.description}</p>
+          <div className="detail-page__description">
+            {dest.description
+              .split(/\n+/)
+              .map((p) => p.trim())
+              .filter(Boolean)
+              .map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+          </div>
         </section>
       )}
       <section className="detail-page__actions">

@@ -412,6 +412,14 @@
   color: var(--color-text);
 }
 
+.detail-page__description p {
+  margin: 0 0 1.1em;
+}
+
+.detail-page__description p:last-child {
+  margin-bottom: 0;
+}
+
 .detail-page__excerpt {
   font-size: 1.15rem;
   line-height: 1.65;
